@@ -18,3 +18,10 @@ welcome_message = '''
 '''
 
 print welcome_message
+
+raw_input("Your questions will now begin. Press enter to continue.\n\n")
+adjective = raw_input("  1. Enter an adjective:  ")
+exclamations = raw_input("  2. Enter your favorite number:  ")
+feeling1 = raw_input("  3. Enter a feeling:  ")
+cartoon_character = raw_input("  4. Enter the name of a cartoon character:  ")
+candy = raw_input("  5. Enter the name of your favorite candy:  ")
