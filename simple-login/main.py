@@ -26,12 +26,38 @@ import webapp2 #use the webapp2 library
 
 class MainHandler(webapp2.RequestHandler): #declaring a class
     def get(self): #function that starts everything. Initializing function a.k.a. catalyst
-        self.response.write('Hello world!')
-	#code goes here
-
-    def additional_functions(self):
-	pass
-	#code goes here
+        page_head = '''
+<!doctype html>
+<html>
+    <head>
+        <title>Simple Form</title>
+    </head>
+    <body>'''
+        
+        #page_body = '''<form method="GET">
+        #    <label>Name</label><input type="text" name="user" />
+        #    <label>Email</label><input type="text" name="email" />
+        #    <input type="submit" value="Submit" />'''
+        
+        page_body = '''
+        <a href="?email=mickey@disney.com&user=Mickey">Mickey</a><br/>
+        <a href="?email=donald@disney.com&user=Donald">Donald</a><br/>
+        <a href="?email=minnie@disney.com&user=Minnie">Minnie</a><br/>
+        <a href="?email=pluto@disney.com&user=Pluto">Pluto</a>
+        '''
+        
+        page_close = '''
+        </form>
+    </body>
+</html>'''
+        
+        if self.request.GET:
+            #store info we got from the form
+            user = self.request.GET['user']
+            email = self.request.GET['email']
+            self.response.write(page_head + user + ' ' + email + page_close)
+        else:
+            self.response.write(page_head + page_body + page_close) #PRINT
 
 #never touch this
 app = webapp2.WSGIApplication([
