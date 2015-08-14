@@ -7,13 +7,15 @@ Simple Form Assignment
 '''
 
 import webapp2
-from pages import Page
+from pages import Page #importing the Page class from pages.py
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        p = Page()
+        p = Page() #instantiating the page class 
         
+        #conditional to verify if any GET key/value pairs exists
         if self.request.GET:
+            #initializing variables to the values of the GET keys
             full_name = self.request.GET['full_name']
             email = self.request.GET['email']
             phone = self.request.GET['phone']
@@ -21,13 +23,18 @@ class MainHandler(webapp2.RequestHandler):
             billing = self.request.GET['billing']
             payment = self.request.GET['payment']
             
-            headings = ["Name:", "Email:", "Phone:", "Amount:", "Billing:", "Payment:"]
+            #creating two arrays. 1 for the heading names and 1 to hold
+            #the variables holding the values of the GET keys.
+            headings = ["Name:", "Email:", "Phone:", "Donation Amount:", "Billing Frequency:", "Payment Option:"]
             results = [full_name, email, phone, amount, billing, payment]
             
+            #altering the body of the p instance of Page
             p.body = '''
             <h3>Donation Confirmation</h3>
             '''
             
+            #have a loop to create the result page from submitting the form
+            #loop through for the length of the array. heading array is used here also.
             for i in range(0,len(results)):
                 p.body += '''
                 <div class="result">
@@ -39,13 +46,16 @@ class MainHandler(webapp2.RequestHandler):
                     </div>
                 </div>
             '''
-                
+            
+            #thank you message at the end of the results.
             p.body += '''
             <h3>Thank you for your support!</h3>
             '''
             
+            #use the print_out method to print the new page
             self.response.write(p.print_out())
         else:
+            #if no GET key/value pairs exist, print out the standard page with the print_out method
             self.response.write(p.print_out())
 
 app = webapp2.WSGIApplication([
