@@ -11,7 +11,23 @@ from pages import Page
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+        p = Page()
+        
+        if self.request.GET:
+            full_name = self.request.GET['user']
+            email = self.request.GET['email']
+            phone = self.request.GET['phone']
+            amount = self.request.GET['amount']
+            billing = self.request.GET['billing']
+            payment = self.request.GET['payment']
+            
+            p.body = '''
+            
+            '''
+            
+            self.response.write(p.print_out())
+        else:
+            self.response.write(p.print_out())
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)

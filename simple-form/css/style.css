@@ -1,0 +1,18 @@
+/*
+Jessica J. Hernandez
+August 11, 2015
+Design Patterns for Web Programming
+201508-01 | Professor Wainman
+Simple Form Assignment
+*/
+
+body {
+    
+}
+
+#container {
+    background: rgba(0,0,0,0.5);
+    width: 60%;
+    padding: 2%;
+    margin: 0 auto;
+}

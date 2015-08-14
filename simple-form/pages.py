@@ -8,7 +8,30 @@ Simple Form Assignment
 
 class Page(object):
     def __init__(self):
-        pass
+        self.title = "Sea Turtle Donation Form"
+        self.css = "css/style.css"
+        self.head = '''
+<!doctype html>
+<html>
+    <head>
+        <title>{self.title}</title>
+        <link type="text/css" rel="stylesheet" href="{self.css}"/>
+    </head>
+    <body>
+        <div id="container">
+        '''
+        
+        self.body = '''
+        
+        '''
+        
+        self.close = '''
+        </div>
+    </body>
+</html>
+        '''
         
     def print_out(self):
-        pass
+        page_construct = self.head + self.body + self.close
+        page_construct = page_construct.format(**locals())
+        return page_construct
