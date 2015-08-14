@@ -7,7 +7,7 @@ Simple Form Assignment
 */
 
 body {
-    
+    position: relative;
 }
 
 #container {
@@ -16,3 +16,65 @@ body {
     padding: 2%;
     margin: 0 auto;
 }
+
+header {
+    position: relative;
+    overflow: visible;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    position: absolute;
+    top: 7%;
+    right: 7%;
+    z-index: 5;
+    font-size: 310%;
+}
+
+header h2 {
+    position: absolute;
+    top: 40%;
+    right: 10%;
+    z-index: 5;
+    width: 60%;
+    font-size: 140%;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+}
+
+.form-group {
+    width: 97%;
+    padding: 1.5%;
+    margin-bottom: 1.5%;
+    background: blue;
+}
+
+.left-col {
+    width: 15%;
+    padding: 2.5%;
+    text-align: right;
+    display: inline-block;
+    background: red;
+    vertical-align: top;
+}
+
+.right-col {
+    width: 74%;
+    padding: 2.5%;
+    display: inline-block;
+    background: green;
+}
+
+.billing_option {
+    display: inline-block;
+    width: 18%;
+}
+
+.billing_option input[type="radio"], .billing_option p.radio-option,
+.payment_option  input[type="radio"], .payment_option  p.radio-option {
+    display: inline-block;
+}
+
