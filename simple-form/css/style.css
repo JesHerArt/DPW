@@ -6,6 +6,9 @@ Design Patterns for Web Programming
 Simple Form Assignment
 */
 
+/* _____________________________________ */
+/*              MAIN STYLES              */
+/* _____________________________________ */
 body {
     font-family: 'Roboto', sans-serif;
     position: relative;
@@ -30,6 +33,20 @@ header {
     margin: 15px 0 35px 0;
 }
 
+hr {
+    display: block;
+    height: 1px;
+    border: 0; 
+    border-top: 1px solid #eec798;
+    margin: 1em 0; 
+    padding: 0;
+}
+
+
+
+/* _____________________________________ */
+/*           HEADINGS & TEXT             */
+/* _____________________________________ */
 header h1 {
     font-family: 'Alegreya Sans SC', sans-serif;
     position: absolute;
@@ -56,6 +73,35 @@ header h2 {
     line-height: 1.3em;
 }
 
+h3 {
+    font-family: 'Alegreya Sans SC', sans-serif;
+    text-align: center;
+    font-size: 200%;
+    letter-spacing: 0.1em;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #eec798;
+    width: 60%;
+    margin: 0 auto 30px auto;
+    color: #fab55b;
+}
+
+h4, .result p {
+    margin: 0;
+}
+
+#container h3:last-child {
+    border-top: 2px solid #eec798;
+    border-bottom: none;
+    padding-bottom: 0;
+    padding-top: 5px;
+    margin: 30px auto 0 auto;
+}
+
+
+
+/* _____________________________________ */
+/*                IMAGES                 */
+/* _____________________________________ */
 header img {
     box-shadow: 0 0 50px black;
     border: 1px solid white;
@@ -65,6 +111,11 @@ img {
     max-width: 100%;
 }
 
+
+
+/* _____________________________________ */
+/*                 FORMS                 */
+/* _____________________________________ */
 .form-group {
     width: 100%;
     margin-bottom: 1.5%;
@@ -142,6 +193,33 @@ select:focus {
     margin: 5px 5px 5px 0;
 }
 
+form label {
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: white;
+}
+
+.result {
+    width: 60%;
+    margin: 0 auto;
+    background: rgba(0,0,0,0.4);
+    border-bottom: 2px solid rgba(87, 96, 127, 0.5);
+    padding: 1.8% 0;
+}
+
+.result:last-child {
+    border: none;
+}
+
+.result .left-col, .result .right-col {
+    width: 44.5%;
+}
+
+
+
+/* _____________________________________ */
+/*               BUTTONS                 */
+/* _____________________________________ */
 .btn {
     padding: 2% 3%;
     background: none;
@@ -160,19 +238,4 @@ input[type="submit"].btn {
     background: rgba(255,255,255,0.2);
     border-color: #fab55b;
     text-shadow: 0 2px 2px black;
-}
-
-form label {
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    color: white;
-}
-
-hr {
-    display: block;
-    height: 1px;
-    border: 0; 
-    border-top: 1px solid #eec798;
-    margin: 1em 0; 
-    padding: 0;
 }

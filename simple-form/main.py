@@ -14,15 +14,34 @@ class MainHandler(webapp2.RequestHandler):
         p = Page()
         
         if self.request.GET:
-            full_name = self.request.GET['user']
+            full_name = self.request.GET['full_name']
             email = self.request.GET['email']
             phone = self.request.GET['phone']
             amount = self.request.GET['amount']
             billing = self.request.GET['billing']
             payment = self.request.GET['payment']
             
-            p.body = '''
+            headings = ["Name:", "Email:", "Phone:", "Amount:", "Billing:", "Payment:"]
+            results = [full_name, email, phone, amount, billing, payment]
             
+            p.body = '''
+            <h3>Donation Confirmation</h3>
+            '''
+            
+            for i in range(0,len(results)):
+                p.body += '''
+                <div class="result">
+                    <div class="left-col">
+                        <h4>''' + headings[i] + '''</h4>
+                    </div>
+                    <div class="right-col">
+                        <p>''' + results[i] + '''</p>
+                    </div>
+                </div>
+            '''
+                
+            p.body += '''
+            <h3>Thank you for your support!</h3>
             '''
             
             self.response.write(p.print_out())

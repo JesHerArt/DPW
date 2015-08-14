@@ -67,11 +67,11 @@ class Page(object):
                         <label for="amount">Donation Amount</label>
                     </div>
                     <div class="right-col">
-                        <div class="billing_option"><input type="radio" name="amount" value="5.00" /> <p class="radio-option">$5.00</p></div>
-                        <div class="billing_option"><input type="radio" name="amount" value="10.00" /> <p class="radio-option">$10.00</p></div>
-                        <div class="billing_option"><input type="radio" name="amount" value="20.00" checked /> <p class="radio-option">$20.00</p></div>
-                        <div class="billing_option"><input type="radio" name="amount" value="30.00" /> <p class="radio-option">$30.00</p></div>
-                        <div class="billing_option"><input type="radio" name="amount" value="50.00" /> <p class="radio-option">$50.00</p></div>
+                        <div class="billing_option"><input type="radio" name="amount" value="$5.00" /> <p class="radio-option">$5.00</p></div>
+                        <div class="billing_option"><input type="radio" name="amount" value="$10.00" /> <p class="radio-option">$10.00</p></div>
+                        <div class="billing_option"><input type="radio" name="amount" value="$20.00" checked /> <p class="radio-option">$20.00</p></div>
+                        <div class="billing_option"><input type="radio" name="amount" value="$30.00" /> <p class="radio-option">$30.00</p></div>
+                        <div class="billing_option"><input type="radio" name="amount" value="$50.00" /> <p class="radio-option">$50.00</p></div>
                     </div>
                 </div>
                 
@@ -80,8 +80,8 @@ class Page(object):
                         <label for="billing">Billing Frequency</label>
                     </div>
                     <div class="right-col">
-                        <select form="donation_form" required>
-                            <option value="select">Select Option</option>
+                        <select name="billing" required>
+                            <option select="selected" value="select">Select Option</option>
                             <option id="weekly_billing" value="Weekly">Weekly</option>
                             <option id="monthly_billing" value="Monthly">Monthly</option>
                             <option id="yearly_billing" value="Yearly">Yearly</option>
