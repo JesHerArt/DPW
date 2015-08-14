@@ -17,6 +17,9 @@ class Page(object):
     <head>
         <title>{self.title}</title>
         <link type="text/css" rel="stylesheet" href="{self.css}"/>
+        <!--Google Font-->
+        <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:900' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
     </head>
     <body>
         <div id="container">
@@ -37,7 +40,7 @@ class Page(object):
                         <label for="full_name">Name</label>
                     </div>
                     <div class="right-col">
-                        <input type="text" id="full_name" name="full_name" placeholder="Full Name" required />
+                        <input class="input" type="text" id="full_name" name="full_name" placeholder="Full Name" required />
                     </div>
                 </div>
                 
@@ -46,7 +49,7 @@ class Page(object):
                         <label for="email">Email</label>
                     </div>
                     <div class="right-col">
-                        <input type="email" id="email" name="email" placeholder="Email Address" required />
+                        <input class="input" type="email" id="email" name="email" placeholder="Email Address" required />
                     </div>
                 </div>
                 
@@ -55,7 +58,7 @@ class Page(object):
                         <label for="phone">Phone</label>
                     </div>
                     <div class="right-col">
-                        <input type="text" id="phone" name="phone" placeholder="(000) 000-0000" required />
+                        <input class="input" type="text" id="phone" name="phone" placeholder="(000) 000-0000" required />
                     </div>
                 </div>
                 
@@ -66,7 +69,7 @@ class Page(object):
                     <div class="right-col">
                         <div class="billing_option"><input type="radio" name="amount" value="5.00" /> <p class="radio-option">$5.00</p></div>
                         <div class="billing_option"><input type="radio" name="amount" value="10.00" /> <p class="radio-option">$10.00</p></div>
-                        <div class="billing_option"><input type="radio" name="amount" value="20.00" /> <p class="radio-option">$20.00</p></div>
+                        <div class="billing_option"><input type="radio" name="amount" value="20.00" checked /> <p class="radio-option">$20.00</p></div>
                         <div class="billing_option"><input type="radio" name="amount" value="30.00" /> <p class="radio-option">$30.00</p></div>
                         <div class="billing_option"><input type="radio" name="amount" value="50.00" /> <p class="radio-option">$50.00</p></div>
                     </div>
@@ -77,8 +80,11 @@ class Page(object):
                         <label for="billing">Billing Frequency</label>
                     </div>
                     <div class="right-col">
-                        <select>
-                            <option id="" value=""></option>
+                        <select form="donation_form" required>
+                            <option value="select">Select Option</option>
+                            <option id="weekly_billing" value="Weekly">Weekly</option>
+                            <option id="monthly_billing" value="Monthly">Monthly</option>
+                            <option id="yearly_billing" value="Yearly">Yearly</option>
                         </select>
                     </div>
                 </div>
@@ -87,19 +93,19 @@ class Page(object):
                     <div class="left-col">
                         <label for="payment">Payment Option</label>
                     </div>
-                    <div class="right-col">
-                        <div class="payment_option"><input type="radio" name="payment" value="Cash" /> <p class="radio-option">Cash (Send my invoice by mail)</p></div>
-                        <hr>
-                        <div class="payment_option"><input type="radio" name="payment" value="Credit Card" /> <p class="radio-option">Credit Card</p></div>
+                    <div class="right-col payment">
+                        <div class="payment_option"><input type="radio" name="payment" value="Credit Card" checked /> <p class="radio-option">Credit Card</p></div>
                         <div class="payment_option"><input type="radio" name="payment" value="PayPal" /> <p class="radio-option">PayPal</p></div>
                         <div class="payment_option"><input type="radio" name="payment" value="Google Wallet" /> <p class="radio-option">Google Wallet</p></div>
+                        <hr>
+                        <div class="payment_option"><input type="radio" name="payment" value="Cash" /> <p class="radio-option">Cash (Send my invoice by mail)</p></div>
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <div class="left-col"></div>
                     <div class="right-col">
-                        <input type="submit" value="Submit" />
+                        <input class="btn" type="submit" value="Submit" />
                     </div>
                 </div>
             </form>

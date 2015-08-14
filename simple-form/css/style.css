@@ -7,28 +7,38 @@ Simple Form Assignment
 */
 
 body {
+    font-family: 'Roboto', sans-serif;
     position: relative;
+    background: url("../images/sunrise.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 5px 0;
+    color: white;
+    text-shadow: 0 2px 2px black;
 }
 
 #container {
     background: rgba(0,0,0,0.5);
     width: 60%;
-    padding: 2%;
+    padding: 2% 4%;
     margin: 0 auto;
 }
 
 header {
     position: relative;
     overflow: visible;
-    margin-bottom: 30px;
+    margin: 15px 0 35px 0;
 }
 
 header h1 {
+    font-family: 'Alegreya Sans SC', sans-serif;
     position: absolute;
     top: 7%;
     right: 7%;
     z-index: 5;
-    font-size: 310%;
+    font-size: 290%;
+    color: #fab55b;
+    text-shadow: 0 2px 2px black;
 }
 
 header h2 {
@@ -36,9 +46,19 @@ header h2 {
     top: 40%;
     right: 10%;
     z-index: 5;
-    width: 60%;
-    font-size: 140%;
+    width: 55%;
+    font-size: 110%;
     text-align: center;
+    color: #eec798;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-shadow: 0 2px 2px black;
+    line-height: 1.3em;
+}
+
+header img {
+    box-shadow: 0 0 50px black;
+    border: 1px solid white;
 }
 
 img {
@@ -46,31 +66,35 @@ img {
 }
 
 .form-group {
-    width: 97%;
-    padding: 1.5%;
+    width: 100%;
     margin-bottom: 1.5%;
-    background: blue;
+}
+
+.form-group:last-child {
+    margin: 0;
 }
 
 .left-col {
-    width: 15%;
+    width: 25%;
     padding: 2.5%;
     text-align: right;
     display: inline-block;
-    background: red;
     vertical-align: top;
+    margin: 0;
+    text-shadow: 0 2px 2px black;
 }
 
 .right-col {
-    width: 74%;
+    width: 64.5%;
     padding: 2.5%;
     display: inline-block;
-    background: green;
+/*    background: rgba(0,0,0,0.3);*/
+    margin: 0;
 }
 
 .billing_option {
     display: inline-block;
-    width: 18%;
+    width: 19%;
 }
 
 .billing_option input[type="radio"], .billing_option p.radio-option,
@@ -78,3 +102,77 @@ img {
     display: inline-block;
 }
 
+input[type="radio"], p.radio-option {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+select {
+    width: 100%;
+    -webkit-appearance: none;
+    padding: 2%;
+    margin: 0;
+    border: 2px solid white;
+    border-radius: 0;
+    background: url("../images/triangle-down.png");
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+    background-color: white;
+}
+
+select:focus {
+    outline: none;
+    border: 2px solid #fab55b;
+}
+
+.input {
+    width: 96%;
+    padding: 2%;
+    border: none;
+    font-size: 80%;
+    border: 2px solid white;
+}
+
+.input:focus {
+    outline: none;
+    border: 2px solid #fab55b;
+}
+
+.payment  input[type="radio"] {
+    margin: 5px 5px 5px 0;
+}
+
+.btn {
+    padding: 2% 3%;
+    background: none;
+    border: 3px solid white;
+    color: #fab55b;
+}
+
+input[type="submit"].btn {
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    margin-left: 30px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background: rgba(255,255,255,0.2);
+    border-color: #fab55b;
+    text-shadow: 0 2px 2px black;
+}
+
+form label {
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: white;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0; 
+    border-top: 1px solid #eec798;
+    margin: 1em 0; 
+    padding: 0;
+}
