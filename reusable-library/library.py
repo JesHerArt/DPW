@@ -8,13 +8,13 @@ Reusable Library Assignment
 
 class Household(object):
     def __init__(self):
-        self.__perimeter = 0
+        self.__area = 0
         self.__name = ""
     
     # METHODS
-    def calc_perimeter(self, l, w):
-        p = (int(l) * 2) + (int(w) * 2)
-        return p
+    def calc_area(self, l, w):
+        a = int(l) * int(w)
+        return a
     
     # HOUSEHOLD NAME - GET/SET
     @property
@@ -27,12 +27,12 @@ class Household(object):
     
     # HOUSEHOLD PERIMETER - GET/SET
     @property
-    def perimeter(self):
-        return self.__perimeter
+    def area(self):
+        return self.__area
     
-    @perimeter.setter
-    def perimeter(self, p):
-        self.__perimeter = p
+    @area.setter
+    def area(self, a):
+        self.__area = a
 
 
 import random
@@ -45,8 +45,17 @@ class Dog(object):
     def randomizer(self):
         return random.randint(0,9)
     
-    def dog_picker(self, b, p):
-        pass
+    def dog_picker(self, b, a):
+        self.name = self.names(self.randomizer())
+        
+        if b == "no":
+            self.breed = self.small_breed(self.randomizer())
+        elif (b == "yes") & (a < 400):
+            self.breed = self.small_breed(self.randomizer())
+        elif (b == "yes") & (a >= 400):
+            self.breed = self.large_breed(self.randomizer())
+        
+        print self.name + " the " + self.breed
     
     def names(self, num):
         dog_names = ["Lucky","Sparky","Coco","Buddy","Honey","Milo","Sassy","Shadow","Rocky","Riki"]
@@ -72,7 +81,7 @@ class Dog(object):
     # DOG BREED - GET/SET
     @property
     def breed(self):
-        return self.__name
+        return self.__breed
     
     @breed.setter
     def breed(self, n):

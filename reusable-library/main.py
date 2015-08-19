@@ -18,10 +18,10 @@ class MainHandler(webapp2.RequestHandler):
             #pass in the GET values to the attributes in the Household class
             h = Household()
             h.name = self.request.GET["name"]
-            h.perimeter = h.calc_perimeter(self.request.GET["length"], self.request.GET["width"])
+            h.area = h.calc_area(self.request.GET["length"], self.request.GET["width"])
             
             d = Dog()
-            d.dog_picker(self.request.GET["backyard"], h.perimeter)
+            d.dog_picker(self.request.GET["backyard"], h.area)
             
             rp = ResultPage()
             self.response.write(rp.print_out())
