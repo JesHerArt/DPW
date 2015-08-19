@@ -8,17 +8,17 @@ Reusable Library Assignment
 
 import webapp2
 from pages import FormPage, ResultPage
-from library import Composer, Dog
+from library import Household, Dog
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         
         #conditional to verify if any GET key/value pairs exists
         if self.request.GET:
-            #pass in the GET values to the classes from library.py
-            suggestion_request = Composer()
-            suggestion_request.name = self.request.GET["name"]
-            suggestion_request.perimeter = suggestion_request.calc_perimeter(self.request.GET["length"], self.request.GET["width"])
+            #pass in the GET values to the attributes in the Household class
+            h = Household()
+            h.name = self.request.GET["name"]
+            h.perimeter = h.calc_perimeter(self.request.GET["length"], self.request.GET["width"])
             
             rp = ResultPage()
             self.response.write(rp.print_out())

@@ -6,10 +6,14 @@ Design Patterns for Web Programming
 Reusable Library Assignment
 '''
 
-class Composer(object):
+class Household(object):
     def __init__(self):
         self.__perimeter = 0
         self.__name = ""
+    
+    def calc_perimeter(self, l, w):
+        p = (int(l) * 2) + (int(w) * 2)
+        return p
     
     @property
     def name(self):
@@ -18,7 +22,6 @@ class Composer(object):
     @name.setter
     def name(self, n):
         self.__name = n
-        print n
     
     @property
     def perimeter(self):
@@ -27,12 +30,39 @@ class Composer(object):
     @perimeter.setter
     def perimeter(self, p):
         self.__perimeter = p
-        print p
-    
-    def calc_perimeter(self, l, w):
-        p = (int(l) * 2) + (int(w) * 2)
-        return p
 
 class Dog(object):
     def __init__(self):
+        self.__name = ""
+        self.__breed = ""
+    
+    def randomizer(self):
         pass
+    
+    def names(self, num):
+        dog_names = []
+        return dog_names[num]
+    
+    def small_breed(self, num):
+        breeds = []
+        return breeds[num]
+    
+    def large_breed(self, num):
+        breeds = []
+        return breeds[num]
+    
+    @property
+    def name(self):
+        return self.__name
+    
+    @name.setter
+    def name(self, n):
+        self.__name = n
+    
+    @property
+    def breed(self):
+        return self.__name
+    
+    @breed.setter
+    def breed(self, n):
+        self.__breed = n
