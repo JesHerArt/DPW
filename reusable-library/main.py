@@ -20,6 +20,9 @@ class MainHandler(webapp2.RequestHandler):
             h.name = self.request.GET["name"]
             h.perimeter = h.calc_perimeter(self.request.GET["length"], self.request.GET["width"])
             
+            d = Dog()
+            d.dog_picker(self.request.GET["backyard"], h.perimeter)
+            
             rp = ResultPage()
             self.response.write(rp.print_out())
         else:
