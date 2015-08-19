@@ -16,6 +16,10 @@ class MainHandler(webapp2.RequestHandler):
         #conditional to verify if any GET key/value pairs exists
         if self.request.GET:
             #pass in the GET values to the classes from library.py
+            suggestion_request = Composer()
+            suggestion_request.name = self.request.GET["name"]
+            suggestion_request.perimeter = suggestion_request.calc_perimeter(self.request.GET["length"], self.request.GET["width"])
+            
             rp = ResultPage()
             self.response.write(rp.print_out())
         else:

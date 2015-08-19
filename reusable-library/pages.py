@@ -68,7 +68,6 @@ class ResultPage(object):
         """
         
         self.__body = """
-        RESULT PAGE TEST
         """
         
         self.__close = """
@@ -95,8 +94,8 @@ class ResultPage(object):
         return self.__body
     
     @body.setter
-    def body(self, var):
-        self.__body = var
+    def body(self, messages):
+        pass
     
     @property
     def close(self):
