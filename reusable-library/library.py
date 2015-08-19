@@ -55,7 +55,7 @@ class Dog(object):
         elif (b == "yes") & (a >= 400):
             self.breed = self.large_breed(self.randomizer())
         
-        print self.name + " the " + self.breed
+        return self.name + " the " + self.breed
     
     def names(self, num):
         dog_names = ["Lucky","Sparky","Coco","Buddy","Honey","Milo","Sassy","Shadow","Rocky","Riki"]

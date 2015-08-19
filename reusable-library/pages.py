@@ -67,8 +67,7 @@ class ResultPage(object):
         <div id="container">
         """
         
-        self.__body = """
-        """
+        self.__body = ""
         
         self.__close = """
         </div>
@@ -80,6 +79,13 @@ class ResultPage(object):
         whole_page = self.head + self.body + self.close
         whole_page = whole_page.format(**locals())
         return whole_page
+    
+    def generate_body(self, name, area, dog):
+        self.body = """
+        <p>Last name: """ + name + """</p>
+        <p>Area: """ + str(area) + """ sq.ft.</p>
+        <p>Dog: """ + dog + """</p>
+        """
     
     @property
     def title(self):
@@ -94,8 +100,8 @@ class ResultPage(object):
         return self.__body
     
     @body.setter
-    def body(self, messages):
-        pass
+    def body(self, b):
+        self.__body = b
     
     @property
     def close(self):

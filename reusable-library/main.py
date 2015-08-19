@@ -21,9 +21,10 @@ class MainHandler(webapp2.RequestHandler):
             h.area = h.calc_area(self.request.GET["length"], self.request.GET["width"])
             
             d = Dog()
-            d.dog_picker(self.request.GET["backyard"], h.area)
+            #d.dog_picker(self.request.GET["backyard"], h.area)
             
             rp = ResultPage()
+            rp.generate_body(h.name, h.area, d.dog_picker(self.request.GET["backyard"], h.area))
             self.response.write(rp.print_out())
         else:
             #if no GET key/value pairs exist, print out the standard page
