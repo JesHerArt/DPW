@@ -16,11 +16,12 @@ class MainHandler(webapp2.RequestHandler):
         #conditional to verify if any GET key/value pairs exists
         if self.request.GET:
             #pass in the GET values to the classes from library.py
-            pass
+            rp = ResultPage()
+            self.response.write(rp.print_out())
         else:
             #if no GET key/value pairs exist, print out the standard page
-            p = FormPage()
-            self.response.write(p.print_out())
+            fp = FormPage()
+            self.response.write(fp.print_out())
 
 
 app = webapp2.WSGIApplication([

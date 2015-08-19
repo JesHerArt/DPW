@@ -22,7 +22,7 @@ class FormPage(object):
         """
         
         self.__body = """
-        TESTING
+        FORM PAGE TEST
         """
         
         self.__close = """
@@ -54,4 +54,50 @@ class FormPage(object):
 
 class ResultPage(object):
     def __init__(self):
-        pass
+        self.__title = "Miami-Dade County Animal Shelter | Dog Adoption Suggestion Form Results"
+        self.__head = """
+<!doctype html>
+<html>
+    <head>
+        <title>{self.title}</title>
+        <link type="text/css" rel="stylesheet" href="css/style.css"/>
+        <!--Google Fonts-->
+    </head>
+    <body>
+        <div id="container">
+        """
+        
+        self.__body = """
+        RESULT PAGE TEST
+        """
+        
+        self.__close = """
+        </div>
+    </body>
+</html>
+        """
+    
+    def print_out(self):
+        whole_page = self.head + self.body + self.close
+        whole_page = whole_page.format(**locals())
+        return whole_page
+    
+    @property
+    def title(self):
+        return self.__title
+    
+    @property
+    def head(self):
+        return self.__head
+    
+    @property
+    def body(self):
+        return self.__body
+    
+    @body.setter
+    def body(self, var):
+        self.__body = var
+    
+    @property
+    def close(self):
+        return self.__close
