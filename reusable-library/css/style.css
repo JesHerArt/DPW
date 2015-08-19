@@ -1,45 +1,23 @@
 /*
 Jessica J. Hernandez
-August 11, 2015
+August 19, 2015
 Design Patterns for Web Programming
 201508-01 | Professor Wainman
-Simple Form Assignment
+Reusable Library Assignment
 */
 
 /* _____________________________________ */
 /*              MAIN STYLES              */
 /* _____________________________________ */
 body {
-    font-family: 'Roboto', sans-serif;
     position: relative;
-    background: url("../images/sunrise.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     padding: 5px 0;
-    color: white;
-    text-shadow: 0 2px 2px black;
 }
 
 #container {
-    background: rgba(0,0,0,0.5);
     width: 60%;
     padding: 2% 4%;
     margin: 0 auto;
-}
-
-header {
-    position: relative;
-    overflow: visible;
-    margin: 15px 0 35px 0;
-}
-
-hr {
-    display: block;
-    height: 1px;
-    border: 0; 
-    border-top: 1px solid #eec798;
-    margin: 1em 0; 
-    padding: 0;
 }
 
 
@@ -47,66 +25,13 @@ hr {
 /* _____________________________________ */
 /*           HEADINGS & TEXT             */
 /* _____________________________________ */
-header h1 {
-    font-family: 'Alegreya Sans SC', sans-serif;
-    position: absolute;
-    top: 7%;
-    right: 7%;
-    z-index: 5;
-    font-size: 290%;
-    color: #fab55b;
-    text-shadow: 0 2px 2px black;
-}
 
-header h2 {
-    position: absolute;
-    top: 40%;
-    right: 10%;
-    z-index: 5;
-    width: 55%;
-    font-size: 110%;
-    text-align: center;
-    color: #eec798;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-shadow: 0 2px 2px black;
-    line-height: 1.3em;
-}
-
-h3 {
-    font-family: 'Alegreya Sans SC', sans-serif;
-    text-align: center;
-    font-size: 200%;
-    letter-spacing: 0.1em;
-    padding-bottom: 5px;
-    border-bottom: 2px solid #eec798;
-    width: 60%;
-    margin: 0 auto 30px auto;
-    color: #fab55b;
-}
-
-h4, .result p {
-    margin: 0;
-}
-
-#container h3:last-child {
-    border-top: 2px solid #eec798;
-    border-bottom: none;
-    padding-bottom: 0;
-    padding-top: 5px;
-    margin: 30px auto 0 auto;
-}
 
 
 
 /* _____________________________________ */
 /*                IMAGES                 */
 /* _____________________________________ */
-header img {
-    box-shadow: 0 0 50px black;
-    border: 1px solid white;
-}
-
 img {
     max-width: 100%;
 }
@@ -139,13 +64,7 @@ img {
     width: 64.5%;
     padding: 2.5%;
     display: inline-block;
-/*    background: rgba(0,0,0,0.3);*/
     margin: 0;
-}
-
-.billing_option {
-    display: inline-block;
-    width: 19%;
 }
 
 .billing_option input[type="radio"], .billing_option p.radio-option,
@@ -156,24 +75,6 @@ img {
 input[type="radio"], p.radio-option {
     margin-top: 0;
     margin-bottom: 0;
-}
-
-select {
-    width: 100%;
-    -webkit-appearance: none;
-    padding: 2%;
-    margin: 0;
-    border: 2px solid white;
-    border-radius: 0;
-    background: url("../images/triangle-down.png");
-    background-repeat: no-repeat;
-    background-position: 98% 50%;
-    background-color: white;
-}
-
-select:focus {
-    outline: none;
-    border: 2px solid #fab55b;
 }
 
 .input {
@@ -197,22 +98,6 @@ form label {
     font-weight: 500;
     letter-spacing: 0.1em;
     color: white;
-}
-
-.result {
-    width: 60%;
-    margin: 0 auto;
-    background: rgba(0,0,0,0.4);
-    border-bottom: 2px solid rgba(87, 96, 127, 0.5);
-    padding: 1.8% 0;
-}
-
-.result:last-child {
-    border: none;
-}
-
-.result .left-col, .result .right-col {
-    width: 44.5%;
 }
 
 

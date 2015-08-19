@@ -1,9 +1,9 @@
 '''
 Jessica J. Hernandez
-August 11, 2015
+August 19, 2015
 Design Patterns for Web Programming
 201508-01 | Professor Wainman
-Simple Form Assignment
+Reusable Library Assignment
 '''
 
 class FormPage(object):
@@ -22,7 +22,7 @@ class FormPage(object):
         """
         
         self.__body = """
-        
+        TESTING
         """
         
         self.__close = """
@@ -31,9 +31,26 @@ class FormPage(object):
 </html>
         """
     
+    def print_out(self):
+        whole_page = self.head + self.body + self.close
+        whole_page = whole_page.format(**locals())
+        return whole_page
+    
     @property
     def title(self):
         return self.__title
+    
+    @property
+    def head(self):
+        return self.__head
+    
+    @property
+    def body(self):
+        return self.__body
+    
+    @property
+    def close(self):
+        return self.__close
 
 class ResultPage(object):
     def __init__(self):

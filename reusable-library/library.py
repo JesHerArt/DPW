@@ -1,9 +1,9 @@
 '''
 Jessica J. Hernandez
-August 11, 2015
+August 19, 2015
 Design Patterns for Web Programming
 201508-01 | Professor Wainman
-Simple Form Assignment
+Reusable Library Assignment
 '''
 
 class Composer(object):
