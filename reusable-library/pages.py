@@ -6,9 +6,13 @@ Design Patterns for Web Programming
 Reusable Library Assignment
 '''
 
+# FORM PAGE CLASS
 class FormPage(object):
     def __init__(self):
+        #the title attribute is private and this is the title of the form page.
         self.__title = "Miami-Dade County Animal Shelter | Dog Adoption Suggestion Form"
+        
+        #the head attribute is private. this docstring holds the title, css, and google fonts
         self.__head = """
 <!doctype html>
 <html>
@@ -23,6 +27,8 @@ class FormPage(object):
         <div id="container">
         """
         
+        #the body attribute is privats. this docstring holds all the elements for
+        #the form thats being displayed to the user. 
         self.__body = """
             <header>
                 <h1>Miami-Dade County Animal Shelter</h1>
@@ -75,6 +81,8 @@ class FormPage(object):
             </div>
         """
         
+        #the close attribute is private. this docstring holds the closing elements
+        #to the form page. it also holds the script tags for main.js and jQuery.
         self.__close = """
         </div>
         <footer>
@@ -86,32 +94,48 @@ class FormPage(object):
 </html>
         """
     
+    
+    # METHODS
+    #generic print_out method created to concatenate all elements of the form page
+    #and return is when the method is called. also compiles local elements. 
     def print_out(self):
         whole_page = self.head + self.body + self.close
         whole_page = whole_page.format(**locals())
         return whole_page
     
+    # TITLE - GET
+    #returns the private title attribute
     @property
     def title(self):
         return self.__title
     
+    # PAGE HEAD - GET
+    #returns the private head attribute
     @property
     def head(self):
         return self.__head
     
+    # PAGE BODY - GET
+    #returns the private body attribute
     @property
     def body(self):
         return self.__body
     
+    # PAGE CLOSE - GET
+    #returns the private close attribute
     @property
     def close(self):
         return self.__close
 
 
 
+# RESULT PAGE CLASS
 class ResultPage(object):
     def __init__(self):
+        #the title attribute is private and this is the title of the result page.
         self.__title = "Miami-Dade County Animal Shelter | Dog Adoption Suggestion Form Results"
+        
+        #the head attribute is private. this docstring holds the title, css, and google fonts
         self.__head = """
 <!doctype html>
 <html>
@@ -132,8 +156,12 @@ class ResultPage(object):
             <hr>
         """
         
+        #the body attribute is private. temporarily empty string.
+        #will get set using the setter within the generate_body utility method.
         self.__body = ""
         
+        #the close attribute is private. this docstring holds the closing elements
+        #to the result page. it also holds the script tags for main.js and jQuery.
         self.__close = """
         </div>
         <footer>
@@ -146,16 +174,22 @@ class ResultPage(object):
 </html>
         """
     
+    
+    # METHODS
+    #generic print_out method created to concatenate all elements of the result page
+    #and return is when the method is called. also compiles local elements. 
     def print_out(self):
         whole_page = self.head + self.body + self.close
         whole_page = whole_page.format(**locals())
         return whole_page
     
+    #ganerate_body utility method used to accept arguments that are used to compose the 
+    #final output message that will be displayed in the results page.
     def generate_body(self, first_name, last_name, area, dog, image):
-        if area < 400:
-            backyard = "Even with having a home that has no backyard, "
-        elif area >= 400:
+        if area >= 1:
             backyard = """Since you have a home with a """ + str(area) + """ sq.ft. backyard, """
+        else:
+            backyard = "Even with having a home that has no backyard, "
         
         self.body = """
             <div id="content">
@@ -173,14 +207,21 @@ class ResultPage(object):
             </div>
         """
     
+    # TITLE - GET
+    #returns the private title attribute
     @property
     def title(self):
         return self.__title
     
+    # PAGE HEAD - GET
+    #returns the private head attribute
     @property
     def head(self):
         return self.__head
     
+    # PAGE BODY - GET/SET
+    #returns the private body attribute
+    #and the setter is used to change the private body attribute
     @property
     def body(self):
         return self.__body
@@ -189,6 +230,8 @@ class ResultPage(object):
     def body(self, b):
         self.__body = b
     
+    # PAGE CLOSE - GET
+    #returns the private close attribute
     @property
     def close(self):
         return self.__close

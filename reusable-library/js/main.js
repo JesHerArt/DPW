@@ -9,6 +9,8 @@ Reusable Library Assignment
 // MAIN DOCUMENT READY FUNTION
 $(document).ready(function() {
     
+    //function used to add a class to the length/width inputs 
+    //if 'no' is selected for backyard
     $('#no').click(function() {
        if($('#no').is(':checked'))
         {
@@ -17,6 +19,8 @@ $(document).ready(function() {
         }
     });
     
+    //function used to remove a class to the length/width inputs 
+    //if 'yes' is selected for backyard
     $('#yes').click(function() {
        if($('#yes').is(':checked'))
         {
@@ -25,6 +29,8 @@ $(document).ready(function() {
         }
     });
     
+    //when button is clicked it will refresh the page
+    //for a new dog suggestion on the results page
     $('#again').click(function() {
         location.reload();
     });
