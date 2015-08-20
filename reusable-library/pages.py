@@ -119,15 +119,28 @@ class ResultPage(object):
         <title>{self.title}</title>
         <link type="text/css" rel="stylesheet" href="css/style.css"/>
         <!--Google Fonts-->
+        <link href='http://fonts.googleapis.com/css?family=Expletus+Sans:400,700,500italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
     </head>
     <body>
         <div id="container">
+            <header>
+                <h1>Miami-Dade County Animal Shelter</h1>
+                <h2>Proudly supported by the ASPCA</h2>
+            </header>
+            
+            <hr>
         """
         
         self.__body = ""
         
         self.__close = """
         </div>
+        <footer>
+            <p>&copy; 2015 Jessica J. Hernandez - Student at Full Sail University</p>
+        </footer>
+        <script src="js/jquery.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>
         """
@@ -138,10 +151,22 @@ class ResultPage(object):
         return whole_page
     
     def generate_body(self, first_name, last_name, area, dog):
+        if area < 400:
+            backyard = "Even with having a home that has no backyard, "
+        elif area >= 400:
+            backyard = """Since you have a home with a """ + str(area) + """ sq.ft. backyard, """
+        
         self.body = """
-            <p>Last name: """ + first_name + """ """ + last_name + """</p>
-            <p>Area: """ + str(area) + """ sq.ft.</p>
-            <p>Dog: """ + dog + """</p>
+            <div id="content">
+                <h3>Dog Adoption Suggestion Form</h3>
+                <h4>Find the perfect dog for your type of home!</h4>
+                
+                <p id="greeting">Hi, """ + first_name + """!</p>
+                <p>Thank you for using our Dog Adoption Suggestion Form. We're really happy to hear that you're choosing to adopt a new furry friend for your home.</p>
+                <p>""" + backyard + """ the perfect match for the """ + last_name + """ household would definitely have to be:</p>
+                <p>""" + dog + """</p>
+                
+            </div>
         """
     
     @property
