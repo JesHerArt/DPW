@@ -35,48 +35,38 @@ class FormPage(object):
                 <h3>Dog Adoption Suggestion Form</h3>
                 <h4>Find the perfect dog for your type of home!</h4>
                 
-                <form id="adopt_suggest_form" method="POST">
+                <form id="adopt_suggest_form" method="GET">
                     
                     <p>Please fill out all form fields.</p>
                     
                     <hr>
                     
                     <div class="form_group">
-                        <label for="first_name">First Name</label><br />
+                        <label for="full_name">Your Name</label><br />
                         <div class="inputs">
-                            <input type="text" id="first_name" name="first_name" required />
-                        </div>
-                    </div>
-                    
-                    <div class="form_group">
-                        <label for="last_name">Last Name</label><br />
-                        <div class="inputs">
-                            <input type="text" id="last_name" name="last_name" required />
+                            <input type="text" class="input" id="first_name" name="first_name" placeholder="First Name" required />
+                            <input type="text" class="input" id="last_name" name="last_name" placeholder="Last Name" required />
                         </div>
                     </div>
                     
                     <div class="form_group">
                         <label for="backyard">Do you have a backyard?</label>
                         <div id="radio_buttons" class="inputs">
-                            <div class="backyard_option">
-                                <input type="radio" name="backyard" value="yes" checked />
-                                <p class="radio-option">Yes</p>
-                            </div>
-                            <div class="backyard_option">
-                                <input type="radio" name="backyard" value="no" />
-                                <p class="radio-option">No</p>
-                            </div>
+                            <label for="yes"><input type="radio" id="yes" name="backyard" value="yes" checked /> Yes</label>
+                            <label for="no"><input type="radio" id="no" name="backyard" value="no" /> No</label>
                         </div>
                     </div>
                     
                     <div class="form_group">
                         <label for="area">What is the length x width of your backyard? (in feet)</label><br />
                         <div class="inputs">
-                            <span>Length: <input type="text" id="length" name="length" class="area" required /> ft.</span>
-                            <span> x </span>
-                            <span>Width: <input type="text" id="width" name="width" class="area" required /> ft.</span>
+                            <span>Length: <input type="number" id="length" name="length" class="area" placeholder="--" min="0" max="999" required /> ft.</span>
+                            <span id="mid"> x </span>
+                            <span>Width: <input type="number" id="width" name="width" class="area" placeholder="--" min="0" max="999" required /> ft.</span>
                         </div>
                     </div>
+                    
+                    <hr>
                     
                     <div class="form_group">
                         <input type="submit" id="submit_form" class="btn" value="Submit" />
@@ -90,6 +80,8 @@ class FormPage(object):
         <footer>
             <p>&copy; 2015 Jessica J. Hernandez - Student at Full Sail University</p>
         </footer>
+        <script src="js/jquery.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>
         """
@@ -147,7 +139,7 @@ class ResultPage(object):
     
     def generate_body(self, first_name, last_name, area, dog):
         self.body = """
-            <p>Last name: """ + name + """</p>
+            <p>Last name: """ + first_name + """ """ + last_name + """</p>
             <p>Area: """ + str(area) + """ sq.ft.</p>
             <p>Dog: """ + dog + """</p>
         """

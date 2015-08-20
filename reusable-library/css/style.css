@@ -80,6 +80,10 @@ form > p {
     font-style: italic;
 }
 
+#mid {
+    margin: 0 15px;
+}
+
 
 /* _____________________________________ */
 /*                IMAGES                 */
@@ -94,7 +98,7 @@ img {
 /*                 FORMS                 */
 /* _____________________________________ */
 form {
-    background: #FCFCFC;
+    background: #F7F7F7;
     width: 60%;
     margin: 0 auto;
     border: 3px solid #113A52;
@@ -103,7 +107,11 @@ form {
 
 .form_group {
     width: 100%;
-    margin-bottom: 2.5%;
+    margin-bottom: 8%;
+}
+
+form > .form_group {
+    margin-top: 8%;
 }
 
 .form_group:last-child {
@@ -114,26 +122,28 @@ form {
     display: inline-block;
 }
 
-p.radio-option {
-    margin-right: 25px;
-}
-
 input[type="radio"], p.radio-option {
     margin-top: 0;
     margin-bottom: 0;
 }
 
-.input {
-    width: 96%;
-    padding: 2%;
+input[type="text"], input[type="number"] {
+    width: 39%;
+    margin: 0 7px;
+    padding: 3%;
     border: none;
     font-size: 80%;
     border: 2px solid white;
+    background: #FCFCFC;
+    box-shadow: 0 1px 1px #777;
+    color: #25C36E;
+    letter-spacing: 0.08em;
 }
 
-.input:focus {
+input:focus {
     outline: none;
-    border: 2px solid #fab55b;
+    border: 2px solid #00C3B6;
+    background: white;
 }
 
 #radio_buttons  input[type="radio"] {
@@ -141,15 +151,26 @@ input[type="radio"], p.radio-option {
 }
 
 label {
-    font-weight: bold;
+    font-weight: 400;
+    color: #00C3B6;
+}
+
+#radio_buttons label {
+    color: inherit;
+    margin-right: 25px;
 }
 
 .inputs {
-    margin-top: 10px;
+    margin-top: 8px;
 }
 
-.area {
-    width: 30px;
+input[type="number"].area {
+    width: 40px;
+    padding: 2% 3%;
+}
+
+.no {
+    opacity: 0.4;
 }
 
 
@@ -158,21 +179,19 @@ label {
 /*               BUTTONS                 */
 /* _____________________________________ */
 .btn {
-    padding: 2% 3%;
-    background: none;
-    border: 3px solid white;
-    color: #fab55b;
+    padding: 3% 4%;
+    background: #113A52;
+    border: 3px solid #F7F7F7;
+    color: white;
 }
 
 input[type="submit"].btn {
     text-transform: uppercase;
     letter-spacing: 0.4em;
-    margin-left: 30px;
+    margin: 6px 0 0 73%; 
 }
 
 .btn:hover {
     cursor: pointer;
-    background: rgba(255,255,255,0.2);
-    border-color: #fab55b;
-    text-shadow: 0 2px 2px black;
+    border-color: #00C3B6;
 }
