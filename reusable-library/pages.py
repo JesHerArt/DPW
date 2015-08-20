@@ -137,7 +137,8 @@ class ResultPage(object):
         self.__close = """
         </div>
         <footer>
-            <p>&copy; 2015 Jessica J. Hernandez - Student at Full Sail University</p>
+            <p>&copy; 2015 Jessica J. Hernandez - Student at Full Sail University<br />
+            All images used are from: https://pixabay.com/</p>
         </footer>
         <script src="js/jquery.js"></script>
         <script src="js/main.js"></script>
@@ -167,6 +168,8 @@ class ResultPage(object):
                 <p class="result">""" + backyard + """ the perfect match for the """ + last_name + """ household would definitely have to be:</p>
                 <p class="result" id="dog">""" + dog + """</p>
                 <img src="images/""" + image + """ " />
+                <input type="button" id="adopt" class="btn result" value="Adopt Me Now!" /> or 
+                <input type="button" id="again" class="btn result" value="Refresh Search" />
             </div>
         """
     

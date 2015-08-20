@@ -12,17 +12,21 @@ $(document).ready(function() {
     $('#no').click(function() {
        if($('#no').is(':checked'))
         {
-            $('#length').val('0').prop('disabled', true).addClass('no');
-            $('#width').val('0').prop('disabled', true).addClass('no');
+            $('#length').val('0').addClass('no');
+            $('#width').val('0').addClass('no');
         }
     });
     
     $('#yes').click(function() {
        if($('#yes').is(':checked'))
         {
-            $('#length').val(undefined).prop('disabled', false).removeClass('no');
-            $('#width').val(undefined).prop('disabled', false).removeClass('no');
+            $('#length').val(undefined).removeClass('no');
+            $('#width').val(undefined).removeClass('no');
         }
+    });
+    
+    $('#again').click(function() {
+        location.reload();
     });
     
 });

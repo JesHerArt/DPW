@@ -24,7 +24,7 @@ class Household(object):
     
     @first_name.setter
     def first_name(self, n):
-        self.__first_name = n
+        self.__first_name = n.title()
     
     # HOUSEHOLD NAME - GET/SET
     @property
@@ -33,7 +33,7 @@ class Household(object):
     
     @last_name.setter
     def last_name(self, n):
-        self.__last_name = n
+        self.__last_name = n.title()
     
     # HOUSEHOLD AREA - GET/SET
     @property
@@ -70,8 +70,6 @@ class Dog(object):
     
     def names(self, num):
         dog_names = ["Lucky","Sparky","Coco","Buddy","Honey","Milo","Sassy","Shadow","Rocky","Riki"]
-        image = ["large/","large/","large/","large/","large/","large/","large/","large/","large/","large/"]
-        self.image = image[num]
         return dog_names[num]
     
     def small_breed(self, num):
@@ -81,7 +79,9 @@ class Dog(object):
         return breeds[num]
     
     def large_breed(self, num):
-        breeds = ["Boxer","Golden Retriever","Shetland Sheepdog","Siberian Husky","American Bulldog","German Shepherd","Dalmation","Labrador Retriever","Rottweiler","Shiba Inu"]
+        breeds = ["Boxer","Golden Retriever","Shetland Sheepdog","Siberian Husky","American Bulldog","German Shepherd","Dalmatian","Labrador Retriever","Rottweiler","Shiba Inu"]
+        image = ["large/boxer.jpg","large/golden.jpg","large/shetland.jpg","large/husky.jpg","large/american-bulldog.jpg","large/german-shepherd.jpg","large/dalmatian.jpg","large/labrador.jpg","large/rottweiler.jpg","large/shiba-inu.jpg"]
+        self.image = image[num]
         return breeds[num]
     
     # DOG NAME - GET/SET

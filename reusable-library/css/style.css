@@ -101,6 +101,7 @@ p#dog {
 /* _____________________________________ */
 img {
     max-width: 100%;
+    width: 500px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -192,17 +193,20 @@ input[type="number"].area {
 /* _____________________________________ */
 /*               BUTTONS                 */
 /* _____________________________________ */
-.btn {
+.btn, .btn:focus {
     padding: 3% 4%;
     background: #113A52;
     border: 3px solid #F7F7F7;
     color: white;
-}
-
-input[type="submit"].btn {
     text-transform: uppercase;
     letter-spacing: 0.4em;
     margin: 6px 0 0 73%; 
+}
+
+#adopt.btn, #again.btn {
+    margin: 20px 9.2%;
+    padding: 2% 3%;
+    display: inline-block;
 }
 
 .btn:hover {
