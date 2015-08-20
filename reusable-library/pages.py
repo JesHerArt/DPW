@@ -29,13 +29,17 @@ class FormPage(object):
                 <h2>Proudly supported by the ASPCA</h2>
             </header>
             
+            <hr>
+            
             <div id="content">
                 <h3>Dog Adoption Suggestion Form</h3>
-                <h4>Find the perfect dog for your type of home</h4>
+                <h4>Find the perfect dog for your type of home!</h4>
                 
                 <form id="adopt_suggest_form" method="POST">
                     
                     <p>Please fill out all form fields.</p>
+                    
+                    <hr>
                     
                     <div class="form_group">
                         <label for="first_name">First Name</label><br />
@@ -79,14 +83,13 @@ class FormPage(object):
                     </div>
                 </form>
             </div>
-            
-            <footer>
-                <p>Footer goes here</p>
-            </footer>
         """
         
         self.__close = """
         </div>
+        <footer>
+            <p>&copy; 2015 Jessica J. Hernandez - Student at Full Sail University</p>
+        </footer>
     </body>
 </html>
         """
