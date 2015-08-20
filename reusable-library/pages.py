@@ -150,7 +150,7 @@ class ResultPage(object):
         whole_page = whole_page.format(**locals())
         return whole_page
     
-    def generate_body(self, first_name, last_name, area, dog):
+    def generate_body(self, first_name, last_name, area, dog, image):
         if area < 400:
             backyard = "Even with having a home that has no backyard, "
         elif area >= 400:
@@ -158,14 +158,15 @@ class ResultPage(object):
         
         self.body = """
             <div id="content">
-                <h3>Dog Adoption Suggestion Form</h3>
+                <h3>Dog Adoption Suggestion Form Results</h3>
                 <h4>Find the perfect dog for your type of home!</h4>
                 
-                <p id="greeting">Hi, """ + first_name + """!</p>
-                <p>Thank you for using our Dog Adoption Suggestion Form. We're really happy to hear that you're choosing to adopt a new furry friend for your home.</p>
-                <p>""" + backyard + """ the perfect match for the """ + last_name + """ household would definitely have to be:</p>
-                <p>""" + dog + """</p>
-                
+                <br />
+                <p class="result" id="greeting">Hi, """ + first_name + """!</p>
+                <p class="result">Thank you for using our Dog Adoption Suggestion Form. We're really happy to hear that you're choosing to adopt a new furry friend for your home.</p>
+                <p class="result">""" + backyard + """ the perfect match for the """ + last_name + """ household would definitely have to be:</p>
+                <p class="result" id="dog">""" + dog + """</p>
+                <img src="images/""" + image + """ " />
             </div>
         """
     

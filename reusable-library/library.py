@@ -50,6 +50,7 @@ class Dog(object):
     def __init__(self):
         self.__name = ""
         self.__breed = ""
+        self.__image = ""
     
     # METHODS
     def randomizer(self):
@@ -69,10 +70,14 @@ class Dog(object):
     
     def names(self, num):
         dog_names = ["Lucky","Sparky","Coco","Buddy","Honey","Milo","Sassy","Shadow","Rocky","Riki"]
+        image = ["large/","large/","large/","large/","large/","large/","large/","large/","large/","large/"]
+        self.image = image[num]
         return dog_names[num]
     
     def small_breed(self, num):
         breeds = ["Maltese","French Bulldog","Chihuahua","Boston Terrier","Miniature Pinscher","Yorkie","Shih Tzu","Papillon","Dachshund","Pug"]
+        image = ["small/maltese.jpg","small/french-bulldog.jpg","small/chihuahua.jpg","small/boston.jpg","small/miniature-pinscher.jpg","small/yorkie.jpg","small/shihtzu.jpg","small/papillon.jpg","small/dachshund.jpg","small/pug.jpg"]
+        self.image = image[num]
         return breeds[num]
     
     def large_breed(self, num):
@@ -96,3 +101,12 @@ class Dog(object):
     @breed.setter
     def breed(self, n):
         self.__breed = n
+    
+    # DOG IMAGE - GET/SET
+    @property
+    def image(self):
+        return self.__image
+    
+    @image.setter
+    def image(self, i):
+        self.__image = i

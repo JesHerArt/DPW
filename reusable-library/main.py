@@ -25,7 +25,7 @@ class MainHandler(webapp2.RequestHandler):
             d = Dog()
             
             rp = ResultPage()
-            rp.generate_body(h.first_name, h.last_name, h.area, d.dog_picker(self.request.GET["backyard"], h.area))
+            rp.generate_body(h.first_name, h.last_name, h.area, d.dog_picker(self.request.GET["backyard"], h.area), d.image)
             self.response.write(rp.print_out())
         else:
             #if no GET key/value pairs exist, print out the standard form page
