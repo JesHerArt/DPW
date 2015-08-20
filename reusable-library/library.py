@@ -9,23 +9,33 @@ Reusable Library Assignment
 class Household(object):
     def __init__(self):
         self.__area = 0
-        self.__name = ""
+        self.__first_name = ""
+        self.__last_name = ""
     
     # METHODS
     def calc_area(self, l, w):
         a = int(l) * int(w)
         return a
     
+    # FIRST NAME - GET/SET
+    @property
+    def first_name(self):
+        return self.__first_name
+    
+    @first_name.setter
+    def first_name(self, n):
+        self.__first_name = n
+    
     # HOUSEHOLD NAME - GET/SET
     @property
-    def name(self):
-        return self.__name
+    def last_name(self):
+        return self.__last_name
     
-    @name.setter
-    def name(self, n):
-        self.__name = n
+    @last_name.setter
+    def last_name(self, n):
+        self.__last_name = n
     
-    # HOUSEHOLD PERIMETER - GET/SET
+    # HOUSEHOLD AREA - GET/SET
     @property
     def area(self):
         return self.__area

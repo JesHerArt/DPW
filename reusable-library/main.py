@@ -17,17 +17,18 @@ class MainHandler(webapp2.RequestHandler):
         if self.request.GET:
             #pass in the GET values to the attributes in the Household class
             h = Household()
-            h.name = self.request.GET["name"]
+            h.first_name = self.request.GET["first_name"]
+            h.last_name = self.request.GET["last_name"]
             h.area = h.calc_area(self.request.GET["length"], self.request.GET["width"])
             
+            #create the instance of a dog
             d = Dog()
-            #d.dog_picker(self.request.GET["backyard"], h.area)
             
             rp = ResultPage()
-            rp.generate_body(h.name, h.area, d.dog_picker(self.request.GET["backyard"], h.area))
+            rp.generate_body(h.first_name, h.last_name, h.area, d.dog_picker(self.request.GET["backyard"], h.area))
             self.response.write(rp.print_out())
         else:
-            #if no GET key/value pairs exist, print out the standard page
+            #if no GET key/value pairs exist, print out the standard form page
             fp = FormPage()
             self.response.write(fp.print_out())
 
