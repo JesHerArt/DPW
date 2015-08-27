@@ -11,7 +11,7 @@ class Page(object):
     def __init__(self):
         self.__title = "Skylanders Spyro's Adventure Characters"
         
-        self.head = '''
+        self.__head = '''
 <!doctype html>
 <html>
     <head>
@@ -24,15 +24,15 @@ class Page(object):
         <div id="container">
         '''
         
-        self.body = '''
+        self.__body = '''
         
         '''
         
-        self.content = '''
+        self.__content = '''
         
         '''
         
-        self.close = '''
+        self.__close = '''
         </div>
         <footer>
             <p>&copy; 2015 Jessica J. Hernandez - Student at Full Sail University<br>All content taken from: <a href="https://www.skylanders.com/characters#fire/ssa" target="_blank">https://www.skylanders.com/characters#fire/ssa</a></p>
@@ -40,6 +40,39 @@ class Page(object):
     </body>
 </html>
         '''
+    
+    def print_out(self):
+        whole_page = self.head + self.body + self.close
+        whole_page = whole_page.format(**locals())
+        return whole_page
+    
+    @property
+    def title(self):
+        return self.__title
+    
+    @title.setter
+    def title(self, t):
+        self.__title = t
+    
+    @property
+    def head(self):
+        return self.__head
+    
+    @property
+    def body(self):
+        return self.__body
+    
+    @property
+    def content(self):
+        return self.__content
+    
+    @content.setter
+    def content(self, c):
+        self.__content = c
+    
+    @property
+    def close(self):
+        return self.__close
 
 
 #CONTENT PAGE CLASS
