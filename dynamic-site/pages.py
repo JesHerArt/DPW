@@ -34,16 +34,17 @@ class Page(object):
         
         self._content = '''
             <div id="content">
-                <h1>Skylander Characters</h1>
+                <h2>Skylander Characters</h2>
                 <p>This site is dedicated to some of the characters from the Skylanders Spyro's Adventure video game.</p>
                 <p>By clicking the links on the navbar you'll be able to learn details about some of the top characters from Spyro's Adventure relating to their background information, which versions they are available in, and even the standard power stats they possess. Each Skylander has their own element and therefore you can see one of each element to get to know a little bit about each one.</p>
+                <img id="logo" src="images/skylanders_logo.png" alt="Skylanders Logo" title="Skylanders Logo" />
             </div>
         '''
         
         self.__close = '''
         </div>
         <footer>
-            <p>&copy; 2015 Jessica J. Hernandez - Student at Full Sail University<br>Data content from: <a href="https://www.skylanders.com/characters#fire/ssa" target="_blank">www.skylanders.com</a></p>
+            <p>&copy; 2015 Jessica J. Hernandez - Student at Full Sail University<br>Data content from: <a href="https://www.skylanders.com/characters#fire/ssa" target="_blank">www.skylanders.com</a><br>All images found on Google Images | All Skylanders belong to Activision and not of my own</p>
         </footer>
     </body>
 </html>
@@ -127,7 +128,7 @@ class ContentPage(Page):
         
         self._content += '''
             <hr>
-            <h3 class="element"><img class="element_img" src="images/elements/''' + s.el_img + '''" alt="" title="" />''' + s.element + ''' Element</h3>
+            <h3 class="element"><img class="element_img" src="images/elements/''' + s.el_img + '''" alt="''' + s.element + ''' Element Image" title="''' + s.element + ''' Element Image" />''' + s.element + ''' Element</h3>
             <hr>
             <h3>Power Stats:</h3>
             <div class="stats">'''
