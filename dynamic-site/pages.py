@@ -113,5 +113,15 @@ class ContentPage(Page):
         self._content = '''
             <div id="content">
                 <h2>''' + s.name.title() + '''</h2>
-            </div>
-        '''
+                <p id="sl_description"><img class="char_img" src="images/characters/''' + s.image + '''" alt="" title="" /> ''' + s.description + '''</p>
+                <h3>Character Versions:</h3>
+                <p>'''
+        
+        for i in range(len(s.char_versions)):
+            if(i == len(s.char_versions)-1):
+                self._content += s.char_versions[i]
+            else:
+                self._content += s.char_versions[i] + " | "
+        
+        self._content += '''
+            </div>'''

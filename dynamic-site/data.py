@@ -40,7 +40,7 @@ class Data(object):
         
         terra = Skylander()
         terra.name = "terrafin"
-        terra.description = '''Terrafin hails from The Dirt Seas,where it was common to swim, bathe, and even snorkel beneath the ground. But a powerful explosion in the sky created a blast wave that turned the ocean of sand into a vast sheet of glass, putting an end to Terrafin's duty as the local lifeguard. Not one to stay idle, the brawny dirt shark found himself training in the art of boxing, and not long after he was local champ. Fighters came from all around to challenge him, but it was a chance meeting with a great Portal Master that led him to give up his title for a greater purpose.'''
+        terra.description = '''Terrafin hails from The Dirt Seas, where it was common to swim, bathe, and even snorkel beneath the ground. But a powerful explosion in the sky created a blast wave that turned the ocean of sand into a vast sheet of glass, putting an end to Terrafin's duty as the local lifeguard. Not one to stay idle, the brawny dirt shark found himself training in the art of boxing, and not long after he was local champ. Fighters came from all around to challenge him, but it was a chance meeting with a great Portal Master that led him to give up his title for a greater purpose.'''
         terra.image = 'terrafin.png'
         terra.element = "Earth"
         terra.el_img = 'earth.png'

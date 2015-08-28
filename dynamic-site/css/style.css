@@ -91,6 +91,15 @@ h1 {
 /*                IMAGES                 */
 /* _____________________________________ */
 
+img {
+    max-width: 100%;
+}
+
+img.char_img {
+    width: 30%;
+    float: left;
+    margin: 10px;
+}
 
 
 
