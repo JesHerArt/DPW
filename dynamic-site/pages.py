@@ -134,13 +134,13 @@ class ContentPage(Page):
         
         for i in range(len(s.power_stats)):
             if(i==0):
-                self._content += '''<div class="stat" id="power" style="width:''' + str(s.power_stats[i]) + '''%;"></div>'''
+                self._content += '''<div class="stat" id="power" style="width:''' + str(s.power_stats[i]) + '''%;">Power</div><div class="percentage">''' + str(s.power_stats[i]) + '''%</div>'''
             if(i==1):
-                self._content += '''<div class="stat" id="armor" style="width:''' + str(s.power_stats[i]) + '''%;"></div>'''
+                self._content += '''<div class="stat" id="armor" style="width:''' + str(s.power_stats[i]) + '''%;">Armor</div>'''
             if(i==2):
-                self._content += '''<div class="stat" id="agility" style="width:''' + str(s.power_stats[i]) + '''%;"></div>'''
+                self._content += '''<div class="stat" id="agility" style="width:''' + str(s.power_stats[i]) + '''%;">Agility</div>'''
             if(i==3):
-                self._content += '''<div class="stat" id="luck" style="width:''' + str(s.power_stats[i]) + '''%;"></div>'''
+                self._content += '''<div class="stat" id="luck" style="width:''' + str(s.power_stats[i]) + '''%;">Luck</div>'''
         
         self._content += '''
             </div>'''
