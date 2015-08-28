@@ -15,35 +15,17 @@ class MainHandler(webapp2.RequestHandler):
         
         #conditional to verify if any GET key/value pairs exists
         if self.request.GET:
-            skylander = self.request.GET["skylander"]
+            value = self.request.GET["skylander"]
             p = ContentPage()
+            s = Data()
             
-            if(skylander == "eruptor"):
-                s = Data()
-                s.skylanders[0]
-            elif(skylander == "gill"):
-                s = Data()
-                s.skylanders[1]
-            elif(skylander == "terra"):
-                s = Data()
-                s.skylanders[2]
-            elif(skylander == "elf"):
-                s = Data()
-                s.skylanders[3]
-            elif(skylander == "warnado"):
-                s = Data()
-                s.skylanders[4]
-            elif(skylander == "trigger"):
-                s = Data()
-                s.skylanders[5]
-            elif(skylander == "spyro"):
-                s = Data()
-                s.skylanders[6]
-            elif(skylander == "hex"):
-                s = Data()
-                s.skylanders[7]
+            print p._title
             
-            self.response.write('print out dynamic page based on get value')
+            #for i in range(len(p._skylanders)):
+                #if(value == p.skylanders[i]):
+                    #s.skylanders[i]
+            
+            self.response.write(p.print_out())
         else:
             p = Page()
             #if no GET key/value pairs exist, print out a standard page
