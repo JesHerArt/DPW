@@ -23,11 +23,13 @@ class MainHandler(webapp2.RequestHandler):
             
             for i in range(len(p._skylanders)):
                 if(value == p._skylanders[i]):
-                    s.skylanders[i]
+                    p.title = s.skylanders[i].name.title() + " | "
+                    p.nav_builder(p._skylanders, s.skylanders[i])
             
             self.response.write(p.print_out())
         else:
             p = Page()
+            p.nav_builder(p._skylanders)
             #if no GET key/value pairs exist, print out a standard page
             self.response.write(p.print_out())
 

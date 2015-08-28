@@ -12,7 +12,7 @@ class Page(object):
         self._skylanders = ['eruptor','gill grunt', 'terrafin', 'stealth elf', 'warnado', 'trigger happy', 'spyro', 'hex']
         self._title = "Skylanders Spyro's Adventure Characters"
         
-        self._head = '''
+        self.__head = '''
 <!doctype html>
 <html>
     <head>
@@ -22,7 +22,7 @@ class Page(object):
         
     </head>'''
         
-        self._body = '''
+        self.__body = '''
     <body>
         <div id="container">
             <header>
@@ -30,7 +30,6 @@ class Page(object):
             </header>'''
         
         self._navbar = ''' '''
-        self.nav_builder(self._skylanders)
         
         self._content = '''
             <div id="content">
@@ -40,7 +39,7 @@ class Page(object):
             </div>
         '''
         
-        self._close = '''
+        self.__close = '''
         </div>
         <footer>
             <p>&copy; 2015 Jessica J. Hernandez - Student at Full Sail University<br>Data content from: <a href="https://www.skylanders.com/characters#fire/ssa" target="_blank">www.skylanders.com</a></p>
@@ -50,7 +49,7 @@ class Page(object):
         '''
     
     def print_out(self):
-        whole_page = self._head + self._body + self._navbar + self._content + self._close
+        whole_page = self.head + self.body + self._navbar + self._content + self.close
         whole_page = whole_page.format(**locals())
         return whole_page
     
@@ -62,27 +61,60 @@ class Page(object):
         for item in chars:
             self._navbar += '''
                     <a href='?skylander=''' + item + ''''><li>''' + item.title() + '''</li></a>'''        
+        
         self._navbar += '''
                 </ul>
             </nav>'''
+    
+    @property
+    def head(self):
+        return self.__head
+    
+    @property
+    def body(self):
+        return self.__body
+    
+    @property
+    def close(self):
+        return self.__close
+    
+    @property
+    def title(self):
+        pass
+    
+    @title.setter
+    def title(self, t):
+        self._title = t + self._title
 
 
 #CONTENT PAGE CLASS
 class ContentPage(Page):
     def __init__(self):
-        super(ContentPage, self).__init__() #Page.__init__()
-        self._title = "Skylanders Spyro's Adventure Characters"
-        
+        super(ContentPage, self).__init__() #Page.__init__()        
         self._content = '''
             <div id="content">
                 <p>Individual Text</p>
             </div>
         '''
     
-    '''
     def nav_builder(self, chars, s):
-        pass
+        self._navbar = '''
+            <nav>
+                <ul>'''
+        
+        for item in chars:
+            if( item == s.name ):
+                self._navbar += '''
+                    <a href='?skylander=''' + item + ''''><li class="active">''' + item.title() + '''</li></a>''' 
+            else:
+                self._navbar += '''
+                    <a href='?skylander=''' + item + ''''><li>''' + item.title() + '''</li></a>'''        
+        
+        self._navbar += '''
+                </ul>
+            </nav>'''
     
+    '''
     def content_builder(self, s):
         pass
     '''
