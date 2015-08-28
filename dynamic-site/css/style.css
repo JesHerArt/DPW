@@ -132,7 +132,10 @@ p#sl_description {
     margin-top: 0;
     padding-bottom: 10px;
     border-bottom: 2px dotted #58595b;
-    color: #ff0038;
+    color: #49b700;
+    text-shadow: 1px 1px 1px #378700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 h3.element {
@@ -168,3 +171,14 @@ img.element_img {
 /* _____________________________________ */
 
 
+
+
+.stats {
+    width: 80%;
+}
+
+.stat {
+    padding: 20px;
+    background: red;
+    margin-bottom: 10px;
+}
