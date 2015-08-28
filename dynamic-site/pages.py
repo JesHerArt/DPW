@@ -20,18 +20,23 @@ class Page(object):
         <link type="text/css" rel="stylesheet" href="css/style.css"/>
         <!--Google Fonts-->
         
-    </head>
-    <body>
-        <div id="container">'''
+    </head>'''
         
         self.__body = '''
-        
-        '''
+    <body>
+        <div id="container">
+            <header>
+                <h1>Skylanders Spyro's Adventure</h1>
+            </header>'''
         
         self._navbar = ''' '''
         
         self._content = '''
-        
+            <div id="content">
+                <h1>Skylander Characters</h1>
+                <p>This site is dedicated to some of the characters from the Skylanders Spyro's Adventure video game.</p>
+                <p>By clicking the links on the navbar you'll be able to learn details about some of the top characters from Spyro's Adventur relating their background information, which versions they are available in, and even the standard power stats they possess. Each Skylander has their own element and therefore you can see one of each element to get to know a little bit about each one.</p>
+            </div>
         '''
         
         self.__close = '''
