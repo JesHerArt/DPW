@@ -91,11 +91,6 @@ class Page(object):
 class ContentPage(Page):
     def __init__(self):
         super(ContentPage, self).__init__() #Page.__init__()        
-        self._content = '''
-            <div id="content">
-                <p>Individual Text</p>
-            </div>
-        '''
     
     def nav_builder(self, chars, s):
         self._navbar = '''
@@ -114,7 +109,9 @@ class ContentPage(Page):
                 </ul>
             </nav>'''
     
-    '''
     def content_builder(self, s):
-        pass
-    '''
+        self._content = '''
+            <div id="content">
+                <h2>''' + s.name.title() + '''</h2>
+            </div>
+        '''

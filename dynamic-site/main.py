@@ -25,6 +25,7 @@ class MainHandler(webapp2.RequestHandler):
                 if(value == p._skylanders[i]):
                     p.title = s.skylanders[i].name.title() + " | "
                     p.nav_builder(p._skylanders, s.skylanders[i])
+                    p.content_builder(s.skylanders[i])
             
             self.response.write(p.print_out())
         else:
