@@ -19,14 +19,15 @@ class Page(object):
         <title>{self._title}</title>
         <link type="text/css" rel="stylesheet" href="css/style.css"/>
         <!--Google Fonts-->
-        
+        <link href='https://fonts.googleapis.com/css?family=Cabin:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Raleway:900' rel='stylesheet' type='text/css'>
     </head>'''
         
         self.__body = '''
     <body>
         <div id="container">
             <header>
-                <a href="/"><h1>Skylanders Spyro's Adventure</h1></a>
+                <h1><a href="/">Skylanders Spyro's Adventure</a></h1>
             </header>'''
         
         self._navbar = ''' '''
@@ -113,7 +114,8 @@ class ContentPage(Page):
         self._content = '''
             <div id="content">
                 <h2>''' + s.name.title() + '''</h2>
-                <p id="sl_description"><img class="char_img" src="images/characters/''' + s.image + '''" alt="" title="" /> ''' + s.description + '''</p>
+                <p id="sl_description"><img class="char_img" src="images/characters/''' + s.image + '''" alt="''' + s.name.title() + ''' Image" title="''' + s.name.title() + ''' Image" /> ''' + s.description + '''</p>
+                <hr>
                 <h3>Character Versions:</h3>
                 <p>'''
         
@@ -122,6 +124,10 @@ class ContentPage(Page):
                 self._content += s.char_versions[i]
             else:
                 self._content += s.char_versions[i] + " | "
+        
+        self._content += '''
+            <hr>
+            <h3 class="element"><img class="element_img" src="images/elements/''' + s.el_img + '''" alt="" title="" />''' + s.element + ''' Element</h3>'''
         
         self._content += '''
             </div>'''
