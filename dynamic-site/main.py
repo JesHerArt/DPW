@@ -45,8 +45,9 @@ class MainHandler(webapp2.RequestHandler):
             
             self.response.write('print out dynamic page based on get value')
         else:
+            p = Page()
             #if no GET key/value pairs exist, print out a standard page
-            self.response.write('print standard page')
+            self.response.write(p.print_out())
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)

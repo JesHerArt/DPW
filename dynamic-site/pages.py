@@ -9,6 +9,7 @@ Dynamic Site Assignment
 #ABSTRACT PAGE CLASS
 class Page(object):
     def __init__(self):
+        self.skylanders = ['eruptor','gill grunt', 'terrafin', 'stealth elf', 'warnado', 'trigger happy', 'spyro', 'hex']
         self._title = "Skylanders Spyro's Adventure Characters"
         
         self.__head = '''
@@ -21,12 +22,13 @@ class Page(object):
         
     </head>
     <body>
-        <div id="container">
-        '''
+        <div id="container">'''
         
         self.__body = '''
         
         '''
+        
+        self._navbar = ''' '''
         
         self._content = '''
         
@@ -35,16 +37,29 @@ class Page(object):
         self.__close = '''
         </div>
         <footer>
-            <p>&copy; 2015 Jessica J. Hernandez - Student at Full Sail University<br>All content taken from: <a href="https://www.skylanders.com/characters#fire/ssa" target="_blank">https://www.skylanders.com/characters#fire/ssa</a></p>
+            <p>&copy; 2015 Jessica J. Hernandez - Student at Full Sail University<br>Data content from: <a href="https://www.skylanders.com/characters#fire/ssa" target="_blank">www.skylanders.com</a></p>
         </footer>
     </body>
 </html>
         '''
     
     def print_out(self):
-        whole_page = self.head + self.body + self._content + self.close
+        self.nav_builder(self.skylanders)
+        whole_page = self.head + self.body + self._navbar + self._content + self.close
         whole_page = whole_page.format(**locals())
         return whole_page
+    
+    def nav_builder(self, chars):
+        self._navbar = '''
+            <nav>
+                <ul>'''
+        
+        for item in chars:
+            self._navbar += '''
+                    <a href='?skylander=''' + item + ''''><li>''' + item.title() + '''</li></a>'''        
+        self._navbar += '''
+                </ul>
+            </nav>'''
     
     @property
     def title(self):
