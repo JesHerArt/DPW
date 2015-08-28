@@ -21,9 +21,9 @@ class MainHandler(webapp2.RequestHandler):
             
             print p._title
             
-            #for i in range(len(p._skylanders)):
-                #if(value == p.skylanders[i]):
-                    #s.skylanders[i]
+            for i in range(len(p._skylanders)):
+                if(value == p._skylanders[i]):
+                    s.skylanders[i]
             
             self.response.write(p.print_out())
         else:

@@ -26,7 +26,7 @@ class Page(object):
     <body>
         <div id="container">
             <header>
-                <h1>Skylanders Spyro's Adventure</h1>
+                <a href="/"><h1>Skylanders Spyro's Adventure</h1></a>
             </header>'''
         
         self._navbar = ''' '''
@@ -70,10 +70,19 @@ class Page(object):
 #CONTENT PAGE CLASS
 class ContentPage(Page):
     def __init__(self):
+        super(ContentPage, self).__init__() #Page.__init__()
         self._title = "Skylanders Spyro's Adventure Characters"
+        
+        self._content = '''
+            <div id="content">
+                <p>Individual Text</p>
+            </div>
+        '''
     
+    '''
     def nav_builder(self, chars, s):
         pass
     
     def content_builder(self, s):
         pass
+    '''
